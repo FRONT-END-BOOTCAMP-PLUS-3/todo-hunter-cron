@@ -12,18 +12,18 @@ Cron-Job 의 경우 서버 백그라운드에서 동작함으로 별도의 Nginx
 todo-hunter-cron/
 ├── .github/
 │   └── workflows/
-│		    └── deploy.yml
+│       └── deploy.yml
 ├── src/
 │   ├── crons/
-│		│   ├── ending-close-cron.ts
-│		│   ├── ending-open-cron.ts
-│		│   ├── status-reset-cron.ts
-│		│   ├── test-log-cron.ts
-│		│   └── index.ts
-│	  ├── lib/
-│	  │	  └── prisma.ts
-│	  ├── types/
-│	  │	  └── cron-type.ts
+│   │   ├── ending-close-cron.ts
+│   │   ├── ending-open-cron.ts
+│   │   ├── status-reset-cron.ts
+│   │   ├── test-log-cron.ts
+│   │   └── index.ts
+│   ├── lib/
+│   │   └── prisma.ts
+│   ├── types/
+│   │   └── cron-type.ts
 │   └── index.ts
 ├── prisma/
 │   └── schema.prisma
@@ -38,10 +38,10 @@ todo-hunter-cron/
 ├── todohunter-repo/
 │   ├── todohunter-app
 │   └── todohunter-runner
-│		    └── _work/
+│       └── _work/
 ├── todohunter-cron-repo/  <- (HERE)
 │   ├── todohunter-cron-app
 │   └── todohunter-cron-runner
-│		    └── _work/
+│       └── _work/
 └── ecosystem.config.js
 ```
