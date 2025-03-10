@@ -50,11 +50,11 @@ jobs:
 
       - name: Check and restart PM2 process
         run: |
-          if pm2 list | grep -q "todo-hunter-cron"; then
+          if pm2 list | grep -q "todohunter-cron-app"; then
             echo "Reloading existing PM2 process"
-            pm2 reload /home/todohunter/ecosystem.config.js --only todo-hunter-cron
+            pm2 reload /home/todohunter/ecosystem.config.js --only todohunter-cron-app
           else
             echo "Starting new PM2 process"
-            pm2 start /home/todohunter/ecosystem.config.js --only todo-hunter-cron
+            pm2 start /home/todohunter/ecosystem.config.js --only todohunter-cron-app
           fi
           pm2 save
