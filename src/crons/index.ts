@@ -5,13 +5,16 @@ import EndingCloseCron from "./ending-close-cron.js";
 import EndingOpenCron from "./ending-open-cron.js";
 import StatusResetCron from "./status-reset-cron.js";
 import TestLogCron from "./test-log-cron.js";
+import TestPrismaCron from "./test-prisma-cron.js";
 
 // 모든 크론잡 목록
 const cronJobs: CronJob[] = [
-  ...(process.env.NODE_ENV === "development" ? [TestLogCron] : []),
+  // ...(process.env.NODE_ENV === "development" ? [TestLogCron, TestPrismaCron] : []),
   EndingOpenCron, // 일요일 자정
   EndingCloseCron, // 월요일 자정 (먼저 실행)
   StatusResetCron, // 월요일 자정 (나중에 실행)
+  TestLogCron,
+  TestPrismaCron,
 ];
 
 // 크론잡 초기화 함수
