@@ -29,6 +29,7 @@ jobs:
       - name: Create deployment directory
         run: |
           mkdir -p /home/todohunter/todohunter-cron-repo/todohunter-cron-app
+          mkdir -p /home/todohunter/todohunter-cron-repo/todohunter-cron-app/logs
 
       - name: Sync to deployment directory
         run: |
