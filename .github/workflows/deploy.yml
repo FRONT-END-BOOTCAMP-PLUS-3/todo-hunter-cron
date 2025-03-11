@@ -30,11 +30,6 @@ jobs:
         run: |
           mkdir -p /home/todohunter/todohunter-cron-repo/todohunter-cron-app
 
-      - name: Set environment variables
-        run: |
-          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > /home/todohunter/todohunter-cron-repo/todohunter-cron-app/.env
-          echo "NODE_ENV=production" >> /home/todohunter/todohunter-cron-repo/todohunter-cron-app/.env
-
       - name: Sync to deployment directory
         run: |
           rsync -av --delete \
@@ -42,6 +37,11 @@ jobs:
             --exclude '.github' \
             --exclude 'node_modules' \
             ./ /home/todohunter/todohunter-cron-repo/todohunter-cron-app/
+
+      - name: Set environment variables
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > /home/todohunter/todohunter-cron-repo/todohunter-cron-app/.env
+          echo "NODE_ENV=production" >> /home/todohunter/todohunter-cron-repo/todohunter-cron-app/.env
 
       - name: Install production dependencies
         run: |
